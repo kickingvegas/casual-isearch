@@ -1,0 +1,38 @@
+* cc-isearch-menu - A Transient menu for isearch
+
+This package contains a [[https://github.com/magit/transient][Transient]] menu for isearch. When in basic isearch mode, this menu can be raised by pressing the ~<f2>~ key. A menu of different isearch commands will be offered as shown below:
+
+[[file:docs/images/cc-isearch-menu.png]]
+
+* Install
+Use the following lines to install cc-isearch-menu.
+#+begin_src elisp :lexical yes
+  (require 'cc-isearch-menu)
+  (define-key isearch-mode-map (kbd "<f2>") 'cc-isearch-menu-transient)
+#+end_src
+
+The keybinding to ~cc-isearch-menu-transient~ can be changed to user preference.
+
+* Menu Commands
+The following isearch commands are grouped as follows in the Transient menu ~cc-isearch-menu-transient~:
+
+** Edit Search String
+  - ~isearch-edit-string~
+  - ~isearch-yank-word-or-char~
+  - ~isearch-yank-symbol-or-char~
+  - ~isearch-yank-line~
+  - ~isearch-yank-kill~
+  - ~isearch-forward-thing-at-point~
+** Replace
+  - ~isearch-query-replace~
+  - ~isearch-query-replace-regexp~
+** Toggle
+  - ~isearch-toggle-regexp~
+  - ~isearch-toggle-symbol~
+  - ~isearch-toggle-word~
+  - ~isearch-toggle-case-fold~
+  - ~isearch-toggle-lax-whitespace~
+** Misc
+  - ~isearch-occur~
+  - ~isearch-highlight-regexp~
+  - ~isearch-highlight-lines-matching-regexp~

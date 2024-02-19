@@ -30,9 +30,6 @@
 ;; - Replace
 ;; - Toggle
 ;; - Misc
-;;
-;; This package by default will bind <f2> to `cc-isearch-menu-transient' in
-;; `isearch-mode-map'.
 
 ;; INSTALLATION
 ;; Enter the code below into your init file to load and install

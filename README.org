@@ -1,3 +1,4 @@
+[[https://melpa.org/#/cc-isearch-menu][file:https://melpa.org/packages/cc-isearch-menu-badge.svg]]
 * cc-isearch-menu - A Transient menu for isearch
 
 This package contains a [[https://github.com/magit/transient][Transient]] menu for isearch. When in basic isearch mode, this menu can be raised by pressing the ~<f2>~ key. A menu of different isearch commands will be offered as shown below:

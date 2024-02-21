@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.0.1
+;; Version: 1.0.3
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -50,7 +50,7 @@
      isearch-edit-string
      :transient nil)
     ("w"
-     "Pull next word or character word from buffer"
+     "Pull next word or character from buffer"
      isearch-yank-word-or-char
      :transient nil)
     ("s"

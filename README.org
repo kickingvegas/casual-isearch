@@ -15,25 +15,40 @@ Use the following lines to install cc-isearch-menu.
 The keybinding to ~cc-isearch-menu-transient~ can be changed to user preference.
 
 * Menu Commands
-The following isearch commands are grouped as follows in the Transient menu ~cc-isearch-menu-transient~:
+The following isearch commands are grouped as follows in the Transient menu ~cc-isearch-menu-transient~. Keys associated with each command are shown enclosed in parentheses.
 
 ** Edit Search String
-  - ~isearch-edit-string~
-  - ~isearch-yank-word-or-char~
-  - ~isearch-yank-symbol-or-char~
-  - ~isearch-yank-line~
-  - ~isearch-yank-kill~
-  - ~isearch-forward-thing-at-point~
+- ~isearch-edit-string~ (~e~)
+- ~isearch-yank-word-or-char~ (~w~)
+- ~isearch-yank-symbol-or-char~ (~s~)
+- ~isearch-yank-line~ (~l~)
+- ~isearch-yank-kill~ (~y~)
+- ~isearch-forward-thing-at-point~ (~t~)
 ** Replace
-  - ~isearch-query-replace~
-  - ~isearch-query-replace-regexp~
+- ~isearch-query-replace~ (~q~)
+- ~isearch-query-replace-regexp~ (~x~)
 ** Toggle
-  - ~isearch-toggle-regexp~
-  - ~isearch-toggle-symbol~
-  - ~isearch-toggle-word~
-  - ~isearch-toggle-case-fold~
-  - ~isearch-toggle-lax-whitespace~
+- ~isearch-toggle-regexp~ (~X~)
+- ~isearch-toggle-symbol~ (~S~)
+- ~isearch-toggle-word~ (~W~)
+- ~isearch-toggle-case-fold~ (~F~)
+- ~isearch-toggle-lax-whitespace~ (~L~)
 ** Misc
-  - ~isearch-occur~
-  - ~isearch-highlight-regexp~
-  - ~isearch-highlight-lines-matching-regexp~
+- ~isearch-occur~ (~o~)
+- ~isearch-highlight-regexp~ (~h~)
+- ~isearch-highlight-lines-matching-regexp~ (~H~)
+** Navigation
+- ~isearch-repeat-forward~ (~n~)
+- ~isearch-repeat-backward~ (~p~)
+
+**  Dismiss
+The Transient key ~d~ will dismiss the menu.
+
+* Support for Repeat Commands and Editing
+Most all of the commands above will dismiss the menu when selected. There are however some exceptions to support repeated usage. When selected these commands will /not/ dismiss the menu. To dismiss the menu use the ~d~ key. These commands are:
+
+- ~isearch-yank-word-or-char~ (~w~)
+- ~isearch-repeat-forward~ (~n~)
+- ~isearch-repeat-backward~ (~p~)
+
+Another command that will not immediately dismiss the menu is ~isearch-edit-string~. This allows for fine-grained editing of the search string while also keeping the choices provided by the menu.

@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.0.3
+;; Version: 1.1.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -48,11 +48,11 @@
     ("e"
      "Edit the search string (recursive)"
      isearch-edit-string
-     :transient nil)
+     :transient t)
     ("w"
      "Pull next word or character from buffer"
      isearch-yank-word-or-char
-     :transient nil)
+     :transient t)
     ("s"
      "Pull next symbol or character from buffer"
      isearch-yank-symbol-or-char
@@ -116,7 +116,17 @@
     ("H"
      "highlight lines"
      isearch-highlight-lines-matching-regexp
-     :transient nil)]])
+     :transient nil)]
+
+   ["Navigation"
+    ("n" "Next"
+     isearch-repeat-forward
+     :transient t)
+    ("p" "Previous"
+     isearch-repeat-backward
+     :transient t)]]
+
+  [("d" "Dismiss" (lambda () (interactive)) :transient transient--do-exit)])
 
 (provide 'cc-isearch-menu)
 ;;; cc-isearch-menu.el ends here

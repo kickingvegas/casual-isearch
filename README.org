@@ -51,4 +51,4 @@ Most all of the commands above will dismiss the menu when selected. There are ho
 - ~isearch-repeat-forward~ (~n~)
 - ~isearch-repeat-backward~ (~p~)
 
-Another command that will not immediately dismiss the menu is ~isearch-edit-string~. This allows for fine-grained editing of the search string while also keeping the choices provided by the menu.
+Another command that will not immediately dismiss the menu is ~isearch-edit-string~ (~e~). This allows for fine-grained editing of the search string while also keeping the choices provided by the menu.

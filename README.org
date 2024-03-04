@@ -25,7 +25,7 @@ The following isearch commands are grouped as follows in the Transient menu ~cc-
 - ~isearch-yank-kill~ (~y~)
 - ~isearch-forward-thing-at-point~ (~t~)
 ** Replace
-- ~isearch-query-replace~ (~q~)
+- ~isearch-query-replace~ (~r~)
 - ~isearch-query-replace-regexp~ (~x~)
 ** Toggle
 - ~isearch-toggle-regexp~ (~X~)
@@ -42,7 +42,7 @@ The following isearch commands are grouped as follows in the Transient menu ~cc-
 - ~isearch-repeat-backward~ (~p~)
 
 **  Dismiss
-The Transient key ~d~ will dismiss the menu.
+The Transient key ~q~ will dismiss the menu.
 
 * Support for Repeat Commands and Editing
 Most all of the commands above will dismiss the menu when selected. There are however some exceptions to support repeated usage. When selected these commands will /not/ dismiss the menu. To dismiss the menu use the ~d~ key. These commands are:

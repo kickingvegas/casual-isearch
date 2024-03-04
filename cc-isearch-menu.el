@@ -71,7 +71,7 @@
      :transient nil)]
 
    ["Replace"
-    ("q"
+    ("r"
      "Start ‘query-replace’"
      isearch-query-replace
      :if-nil buffer-read-only
@@ -126,7 +126,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [("d" "Dismiss" (lambda () (interactive)) :transient transient--do-exit)])
+  [("q" "Dismiss" (lambda () (interactive)) :transient transient--do-exit)])
 
 (provide 'cc-isearch-menu)
 ;;; cc-isearch-menu.el ends here

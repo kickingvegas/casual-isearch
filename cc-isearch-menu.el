@@ -126,7 +126,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [("q" "Dismiss" (lambda () (interactive)) :transient transient--do-exit)])
+  [("q" "Dismiss" ignore :transient transient--do-exit)])
 
 (provide 'cc-isearch-menu)
 ;;; cc-isearch-menu.el ends here

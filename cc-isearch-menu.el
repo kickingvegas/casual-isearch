@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.2.0
+;; Version: 1.2.1
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -126,7 +126,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [("q" "Dismiss" (lambda () (interactive)) :transient transient--do-exit)])
+  [("q" "Dismiss" ignore :transient transient--do-exit)])
 
 (provide 'cc-isearch-menu)
 ;;; cc-isearch-menu.el ends here

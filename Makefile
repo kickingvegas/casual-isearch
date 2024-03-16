@@ -82,3 +82,6 @@ create-release-pr: create-merge-development-branch bump
 create-release-tag: checkout-main
 	git tag $(PACKAGE_VERSION)
 	git push origin $(PACKAGE_VERSION)
+
+create-gh-release:
+	gh release create -t v$(PACKAGE_VERSION) --notes-from-tag $(PACKAGE_VERSION)

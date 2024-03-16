@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.2.1
+;; Version: 1.3.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -56,19 +56,19 @@
     ("s"
      "Pull next symbol or character from buffer"
      isearch-yank-symbol-or-char
-     :transient nil)
+     :transient t)
     ("l"
      "Pull rest of line from buffer"
      isearch-yank-line
-     :transient nil)
+     :transient t)
     ("y"
      "Pull string from kill ring"
      isearch-yank-kill
-     :transient nil)
+     :transient t)
     ("t"
      "Pull thing from buffer"
      isearch-forward-thing-at-point
-     :transient nil)]
+     :transient t)]
 
    ["Replace"
     ("r"

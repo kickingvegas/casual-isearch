@@ -56,19 +56,19 @@
     ("s"
      "Pull next symbol or character from buffer"
      isearch-yank-symbol-or-char
-     :transient nil)
+     :transient t)
     ("l"
      "Pull rest of line from buffer"
      isearch-yank-line
-     :transient nil)
+     :transient t)
     ("y"
      "Pull string from kill ring"
      isearch-yank-kill
-     :transient nil)
+     :transient t)
     ("t"
      "Pull thing from buffer"
      isearch-forward-thing-at-point
-     :transient nil)]
+     :transient t)]
 
    ["Replace"
     ("r"

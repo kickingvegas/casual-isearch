@@ -30,10 +30,11 @@
 ;; - Replace
 ;; - Toggle
 ;; - Misc
+;; - Navigation
 
 ;; INSTALLATION
 ;; Enter the code below into your init file to load and install
-;; `cc-isearch-menu'. Tune the keybinding to your taste.
+;; `cc-isearch-menu'.  Tune the keybinding to your taste.
 
 ;; (require 'cc-isearch-menu)
 ;; (define-key isearch-mode-map (kbd "<f2>") 'cc-isearch-menu-transient)
@@ -86,23 +87,23 @@
     ("X"
      "Regexp searching"
      isearch-toggle-regexp
-     :transient nil)
+     :transient t)
     ("S"
      "Symbol searching"
      isearch-toggle-symbol
-     :transient nil)
+     :transient t)
     ("W"
      "Word searching"
      isearch-toggle-word
-     :transient nil)
+     :transient t)
     ("F"
      "Case fold"
      isearch-toggle-case-fold
-     :transient nil)
+     :transient t)
     ("L"
      "Lax whitespace"
      isearch-toggle-lax-whitespace
-     :transient nil)]
+     :transient t)]
 
    ["Misc"
     ("o"

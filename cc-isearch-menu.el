@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.3.1
+;; Version: 1.4.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -42,6 +42,24 @@
 ;;; Code:
 
 (require 'transient)
+
+(defun cc-isearch--toggle-regex-and-edit ()
+  "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."
+  (interactive)
+  (isearch-toggle-regexp)
+  (isearch-edit-string))
+
+(defun cc-isearch--toggle-symbol-and-edit ()
+  "Invoke `isearch-toggle-symbol' then `isearch-edit-string'."
+  (interactive)
+  (isearch-toggle-symbol)
+  (isearch-edit-string))
+
+(defun cc-isearch--toggle-word-and-edit ()
+  "Invoke `isearch-toggle-word' then `isearch-edit-string'."
+  (interactive)
+  (isearch-toggle-symbol)
+  (isearch-edit-string))
 
 (transient-define-prefix cc-isearch-menu-transient ()
   "Transient menu for isearch."
@@ -85,16 +103,16 @@
 
   [["Toggle"
     ("X"
-     "Regexp searching"
-     isearch-toggle-regexp
+     "Regexp searching (edit)"
+     cc-isearch--toggle-regex-and-edit
      :transient t)
     ("S"
-     "Symbol searching"
-     isearch-toggle-symbol
+     "Symbol searching (edit)"
+     cc-isearch--toggle-symbol-and-edit
      :transient t)
     ("W"
-     "Word searching"
-     isearch-toggle-word
+     "Word searching (edit)"
+     cc-isearch--toggle-word-and-edit
      :transient t)
     ("F"
      "Case fold"

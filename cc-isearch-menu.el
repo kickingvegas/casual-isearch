@@ -87,7 +87,7 @@
     ("t"
      "Pull thing from buffer"
      isearch-forward-thing-at-point
-     :transient t)]
+     :transient nil)]
 
    ["Replace"
     ("r"

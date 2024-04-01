@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.4.0
+;; Version: 1.4.1
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -87,7 +87,7 @@
     ("t"
      "Pull thing from buffer"
      isearch-forward-thing-at-point
-     :transient t)]
+     :transient nil)]
 
    ["Replace"
     ("r"

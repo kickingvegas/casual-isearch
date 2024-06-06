@@ -42,7 +42,7 @@ The following isearch commands are grouped as follows in the Transient menu ~cc-
 - ~isearch-repeat-backward~ (~p~)
 
 **  Dismiss
-The Transient key ~q~ will dismiss the menu.
+The Transient key ~C-q~ will dismiss the menu.
 
 * Usage
 When in search mode (typically via the keybinding ~C-s~ or ~C-r~), pressing the keybinding ~<f2>~ (or binding of your preference) will raise the Transient menu ~cc-isearch-menu-transient~. Once raised, only the /isearch/ commands in the *Replace* and *Misc* sections will automatically dismiss the menu when selected. All other /isearch/ commands will /not/ dismiss the menu.

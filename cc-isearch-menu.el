@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/cc-isearch-menu
 ;; Keywords: wp
-;; Version: 1.4.1
+;; Version: 1.5.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 

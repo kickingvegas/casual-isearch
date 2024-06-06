@@ -1,4 +1,4 @@
-;;; cc-isearch-menu.el --- A Transient menu for isearch -*- lexical-binding: t; -*-
+;;; cc-isearch-menu.el --- A Transient UI for I-Search -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2024  Charles Choi
 
@@ -37,7 +37,7 @@
 ;; `cc-isearch-menu'.  Tune the keybinding to your taste.
 
 ;; (require 'cc-isearch-menu)
-;; (define-key isearch-mode-map (kbd "<f2>") 'cc-isearch-menu-transient)
+;; (define-key isearch-mode-map (kbd "<f2>") #'cc-isearch-menu-transient)
 
 ;;; Code:
 
@@ -145,7 +145,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [("q" "Dismiss" ignore :transient transient--do-exit)])
+  [("C-q" "Dismiss" ignore :transient transient-quit-all)])
 
 (provide 'cc-isearch-menu)
 ;;; cc-isearch-menu.el ends here

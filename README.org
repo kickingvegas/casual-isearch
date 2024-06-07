@@ -9,7 +9,7 @@ This package contains a [[https://github.com/magit/transient][Transient]] menu f
 Use the following lines to install cc-isearch-menu.
 #+begin_src elisp :lexical yes
   (require 'cc-isearch-menu)
-  (define-key isearch-mode-map (kbd "<f2>") 'cc-isearch-menu-transient)
+  (define-key isearch-mode-map (kbd "<f2>") #'cc-isearch-menu-transient)
 #+end_src
 
 The keybinding to ~cc-isearch-menu-transient~ can be changed to user preference.
@@ -42,14 +42,21 @@ The following isearch commands are grouped as follows in the Transient menu ~cc-
 - ~isearch-repeat-backward~ (~p~)
 
 **  Dismiss
-The Transient key ~q~ will dismiss the menu.
+The Transient key ~C-q~ will dismiss the menu.
 
 * Usage
 When in search mode (typically via the keybinding ~C-s~ or ~C-r~), pressing the keybinding ~<f2>~ (or binding of your preference) will raise the Transient menu ~cc-isearch-menu-transient~. Once raised, only the /isearch/ commands in the *Replace* and *Misc* sections will automatically dismiss the menu when selected. All other /isearch/ commands will /not/ dismiss the menu.
 
 Note that editing the search text via ~isearch-edit-string~ will enter a recursive editing mode that is normally exited when pressing the return key.
 
-As built-in behavior to Transient menus, ~C-g~ will cancel a running command or dismiss the menu.
+As built-in behavior to Transient menus, ~C-q~ will dismiss all nested menus. Alternately one can use ~C-g~ to dismiss the present menu as this package only has one menu.
+
+* See Also
+If you like cc-isearch-menu, these other projects might interest you:
+- [[https://github.com/kickingvegas/casual][Casual]] - a Transient porcelain for Emacs Calc.
+- [[https://github.com/kickingvegas/casual-dired][Casual Dired]] - a Transient porcelain for the Emacs file manager Dired.
+- [[https://github.com/kickingvegas/casual-avy][Casual Avy]] - a Transient porcelain for Avy.
+- [[https://github.com/kickingvegas/casual-info][Casual Info]] - a Transient porcelain for Info.
 
 * Sponsorship
 If you enjoy using cc-isearch-menu, consider making a modest financial contribution to help support its development and maintenance.

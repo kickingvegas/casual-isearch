@@ -43,7 +43,7 @@
 #   $ make new-sprint
 
 LISP_DIR=.
-MAIN_EL=$(LISP_DIR)/cc-isearch-menu.el
+MAIN_EL=$(LISP_DIR)/casual-isearch.el
 #VERSION_EL=$(LISP_DIR)/casual-info-version.el
 
 TIMESTAMP := $(shell /bin/date "+%Y%m%d_%H%M%S")

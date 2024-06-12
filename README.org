@@ -1,21 +1,21 @@
 [[https://melpa.org/#/cc-isearch-menu][file:https://melpa.org/packages/cc-isearch-menu-badge.svg]]
-* cc-isearch-menu - A Transient menu for isearch
+* Casual I-Search - A Transient menu for I-Search
 
-This package contains a [[https://github.com/magit/transient][Transient]] menu for isearch. When in basic isearch mode, this menu can be raised by pressing the ~<f2>~ key. A menu of different isearch commands will be offered as shown below:
+This package contains a [[https://github.com/magit/transient][Transient]] menu for I-Search. When in basic I-Search mode, this menu can be raised by pressing the ~<f2>~ key. A menu of different isearch commands will be offered as shown below:
 
-[[file:docs/images/cc-isearch-menu.png]]
+[[file:docs/images/casual-isearch-tmenu.png]]
 
 * Install
 Use the following lines to install cc-isearch-menu.
 #+begin_src elisp :lexical yes
-  (require 'cc-isearch-menu)
-  (define-key isearch-mode-map (kbd "<f2>") #'cc-isearch-menu-transient)
+  (require 'casual-isearch)
+  (define-key isearch-mode-map (kbd "<f2>") #'casual-isearch-tmenu)
 #+end_src
 
-The keybinding to ~cc-isearch-menu-transient~ can be changed to user preference.
+The keybinding to ~casual-isearch-tmenu~ can be changed to user preference.
 
 * Menu Commands
-The following isearch commands are grouped as follows in the Transient menu ~cc-isearch-menu-transient~. Keys associated with each command are shown enclosed in parentheses.
+The following I-Search commands are grouped as follows in the Transient menu ~casual-isearch-tmenu~. Keys associated with each command are shown enclosed in parentheses.
 
 ** Edit Search String
 - ~isearch-edit-string~ (~e~)
@@ -45,20 +45,20 @@ The following isearch commands are grouped as follows in the Transient menu ~cc-
 The Transient key ~C-q~ will dismiss the menu.
 
 * Usage
-When in search mode (typically via the keybinding ~C-s~ or ~C-r~), pressing the keybinding ~<f2>~ (or binding of your preference) will raise the Transient menu ~cc-isearch-menu-transient~. Once raised, only the /isearch/ commands in the *Replace* and *Misc* sections will automatically dismiss the menu when selected. All other /isearch/ commands will /not/ dismiss the menu.
+When in search mode (typically via the keybinding ~C-s~ or ~C-r~), pressing the keybinding ~<f2>~ (or binding of your preference) will raise the Transient menu ~casual-isearch-tmenu~. Once raised, only the /I-Search/ commands in the *Replace* and *Misc* sections will automatically dismiss the menu when selected. All other /I-Search/ commands will /not/ dismiss the menu.
 
 Note that editing the search text via ~isearch-edit-string~ will enter a recursive editing mode that is normally exited when pressing the return key.
 
 As built-in behavior to Transient menus, ~C-q~ will dismiss all nested menus. Alternately one can use ~C-g~ to dismiss the present menu as this package only has one menu.
 
 * See Also
-If you like cc-isearch-menu, these other projects might interest you:
-- [[https://github.com/kickingvegas/casual][Casual]] - a Transient porcelain for Emacs Calc.
+If you like Casual I-Search, these other projects might interest you:
+- [[https://github.com/kickingvegas/casual][Casual Calc]] - a Transient porcelain for Emacs Calc.
 - [[https://github.com/kickingvegas/casual-dired][Casual Dired]] - a Transient porcelain for the Emacs file manager Dired.
 - [[https://github.com/kickingvegas/casual-avy][Casual Avy]] - a Transient porcelain for Avy.
 - [[https://github.com/kickingvegas/casual-info][Casual Info]] - a Transient porcelain for Info.
 
 * Sponsorship
-If you enjoy using cc-isearch-menu, consider making a modest financial contribution to help support its development and maintenance.
+If you enjoy using Casual I-Search, consider making a modest financial contribution to help support its development and maintenance.
 
 [[https://www.buymeacoffee.com/kickingvegas][file:docs/images/default-yellow.png]]

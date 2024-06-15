@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
-;; Version: 1.5.0
+;; Version: 1.6.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 

@@ -1,11 +1,11 @@
-;;; cc-isearch-menu.el --- A Transient UI for I-Search -*- lexical-binding: t; -*-
+;;; casual-isearch.el --- Transient UI for I-Search -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023-2024  Charles Choi
 
 ;; Author: Charles Choi <kickingvegas@gmail.com>
-;; URL: https://github.com/kickingvegas/cc-isearch-menu
+;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
-;; Version: 1.5.0
+;; Version: 1.6.0
 ;; Package-Requires: ((emacs "29.1"))
 ;;
 
@@ -34,35 +34,35 @@
 
 ;; INSTALLATION
 ;; Enter the code below into your init file to load and install
-;; `cc-isearch-menu'.  Tune the keybinding to your taste.
+;; `casual-isearch-tmenu'.  Tune the keybinding to your taste.
 
-;; (require 'cc-isearch-menu)
-;; (define-key isearch-mode-map (kbd "<f2>") #'cc-isearch-menu-transient)
+;; (require 'casual-isearch)
+;; (define-key isearch-mode-map (kbd "<f2>") #'casual-isearch-tmenu)
 
 ;;; Code:
 
 (require 'transient)
 
-(defun cc-isearch--toggle-regex-and-edit ()
+(defun casual-isearch--toggle-regex-and-edit ()
   "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."
   (interactive)
   (isearch-toggle-regexp)
   (isearch-edit-string))
 
-(defun cc-isearch--toggle-symbol-and-edit ()
+(defun casual-isearch--toggle-symbol-and-edit ()
   "Invoke `isearch-toggle-symbol' then `isearch-edit-string'."
   (interactive)
   (isearch-toggle-symbol)
   (isearch-edit-string))
 
-(defun cc-isearch--toggle-word-and-edit ()
+(defun casual-isearch--toggle-word-and-edit ()
   "Invoke `isearch-toggle-word' then `isearch-edit-string'."
   (interactive)
   (isearch-toggle-symbol)
   (isearch-edit-string))
 
-(transient-define-prefix cc-isearch-menu-transient ()
-  "Transient menu for isearch."
+(transient-define-prefix casual-isearch-tmenu ()
+  "Transient menu for I-Search."
   [["Edit Search String"
     ("e"
      "Edit the search string (recursive)"
@@ -104,15 +104,15 @@
   [["Toggle"
     ("X"
      "Regexp searching (edit)"
-     cc-isearch--toggle-regex-and-edit
+     casual-isearch--toggle-regex-and-edit
      :transient t)
     ("S"
      "Symbol searching (edit)"
-     cc-isearch--toggle-symbol-and-edit
+     casual-isearch--toggle-symbol-and-edit
      :transient t)
     ("W"
      "Word searching (edit)"
-     cc-isearch--toggle-word-and-edit
+     casual-isearch--toggle-word-and-edit
      :transient t)
     ("F"
      "Case fold"
@@ -147,5 +147,5 @@
 
   [("C-q" "Dismiss" ignore :transient transient-quit-all)])
 
-(provide 'cc-isearch-menu)
-;;; cc-isearch-menu.el ends here
+(provide 'casual-isearch)
+;;; casual-isearch.el ends here

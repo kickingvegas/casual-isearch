@@ -20,34 +20,64 @@
 # - Python semver
 # - Bash
 
-PACKAGE_EL=cc-isearch-menu.el
+## User Actions
+# To run test suite:
+#   $ make tests
+
+# To update development branch with fetch and pull
+#   $ make checkout-development
+
+# To create a pull request on the development branch:
+#   $ make create-pr
+
+# Bumping development version after PR is merged:
+#   $ make BUMP_LEVEL=prerelease bump
+
+# To create a pull request on the main branch:
+#   $ make create-release-pr
+
+# To create a new release tag (only after merging create-release-pr):
+#   $ make BUMP_LEVEL={patch|minor|major} create-release-tag
+
+# To setup for new sprint development:
+#   $ make new-sprint
+
+LISP_DIR=.
+MAIN_EL=$(LISP_DIR)/casual-isearch.el
+#VERSION_EL=$(LISP_DIR)/casual-info-version.el
 
 TIMESTAMP := $(shell /bin/date "+%Y%m%d_%H%M%S")
-PACKAGE_VERSION := $(shell ./scripts/read-version.sh $(PACKAGE_EL))
+VERSION := $(shell ./scripts/read-version.sh $(MAIN_EL))
 # BUMP_LEVEL: major|minor|patch|prerelease|build
 BUMP_LEVEL=patch
-PACKAGE_VERSION_BUMP := $(shell python -m semver bump $(BUMP_LEVEL) $(PACKAGE_VERSION))
+VERSION_BUMP := $(shell python -m semver nextver $(VERSION) $(BUMP_LEVEL))
+VERSION_PRERELEASE := $(shell python -m semver nextver $(VERSION) prerelease)
 
-.PHONY: tests \
-create-pr \
-bump \
-checkout-development \
-checkout-main \
-sync-development-with-main \
-create-merge-development-branch \
-create-pr \
-create-release-pr \
-create-release-tag
-
+.PHONY: tests					\
+create-pr					\
+bump-casual					\
+bump						\
+checkout-development				\
+checkout-main					\
+sync-development-with-main			\
+new-sprint					\
+create-merge-development-branch			\
+create-pr					\
+create-release-pr				\
+create-release-tag				\
+create-gh-release
 
 ## Run test regression
 tests:
-	$(MAKE) -C tests tests
+	$(MAKE) -C lisp tests
 
 ## Bump Patch Version
-bump: checkout-development
-	sed -i 's/;; Version: $(PACKAGE_VERSION)/;; Version: $(PACKAGE_VERSION_BUMP)/' $(PACKAGE_EL)
-	git commit -m 'Bump version to $(PACKAGE_VERSION_BUMP)' $(PACKAGE_EL)
+bump-casual:
+	sed -i 's/;; Version: $(VERSION)/;; Version: $(VERSION_BUMP)/' $(MAIN_EL)
+#	sed -i 's/(defconst casual-isearch-version "$(VERSION)"/(defconst casual-isearch-version "$(VERSION_BUMP)"/' $(VERSION_EL)
+
+bump: checkout-development bump-casual
+	git commit -m 'Bump version to $(VERSION_BUMP)' $(MAIN_EL) $(VERSION_EL)
 	git push
 
 checkout-development:
@@ -65,6 +95,8 @@ checkout-main:
 sync-development-with-main: checkout-main checkout-development
 	git merge main
 
+new-sprint: sync-development-with-main bump
+
 create-merge-development-branch: checkout-development
 	git checkout -b merge-development-to-main-$(TIMESTAMP)
 	git push --set-upstream origin merge-development-to-main-$(TIMESTAMP)
@@ -73,6 +105,9 @@ create-merge-development-branch: checkout-development
 create-pr:
 	gh pr create --base development --fill
 
+create-patch-pr:
+	gh pr create --base main --fill
+
 ## Create GitHub pull request for release
 create-release-pr: create-merge-development-branch bump
 	gh pr create --base main \
@@ -80,8 +115,8 @@ create-release-pr: create-merge-development-branch bump
 --fill-verbose
 
 create-release-tag: checkout-main
-	git tag $(PACKAGE_VERSION)
-	git push origin $(PACKAGE_VERSION)
+	git tag $(VERSION)
+	git push origin $(VERSION)
 
-create-gh-release:
-	gh release create -t v$(PACKAGE_VERSION) --notes-from-tag $(PACKAGE_VERSION)
+create-gh-release: create-release-tag
+	gh release create -t v$(VERSION) --notes-from-tag $(VERSION)

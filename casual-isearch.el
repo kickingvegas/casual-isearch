@@ -6,7 +6,7 @@
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
 ;; Version: 1.6.0
-;; Package-Requires: ((emacs "29.1"))
+;; Package-Requires: ((emacs "29.1") (casual-lib "1.0.0"))
 ;;
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -42,6 +42,7 @@
 ;;; Code:
 
 (require 'transient)
+(require 'casual-lib)
 
 (defun casual-isearch--toggle-regex-and-edit ()
   "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."
@@ -145,7 +146,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [("C-q" "Dismiss" ignore :transient transient-quit-all)])
+  [(casual-lib-quit-all)])
 
 (provide 'casual-isearch)
 ;;; casual-isearch.el ends here

@@ -65,11 +65,13 @@ create-merge-development-branch			\
 create-pr					\
 create-release-pr				\
 create-release-tag				\
-create-gh-release
+create-gh-release				\
+status
 
 ## Run test regression
 tests:
-	$(MAKE) -C lisp tests
+	echo "hi, no tests for casual-isearch yet."
+#	$(MAKE) -C lisp tests
 
 ## Bump Patch Version
 bump-casual:
@@ -120,3 +122,6 @@ create-release-tag: checkout-main
 
 create-gh-release: create-release-tag
 	gh release create -t v$(VERSION) --notes-from-tag $(VERSION)
+
+status:
+	git status

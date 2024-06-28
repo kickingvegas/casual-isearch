@@ -1,4 +1,4 @@
-[[https://melpa.org/#/cc-isearch-menu][file:https://melpa.org/packages/cc-isearch-menu-badge.svg]]
+[[https://melpa.org/#/casual-isearch][file:https://melpa.org/packages/casual-isearch-badge.svg]]
 * Casual I-Search - A Transient menu for I-Search
 
 This package contains a [[https://github.com/magit/transient][Transient]] menu for I-Search. When in basic I-Search mode, this menu can be raised by pressing the ~<f2>~ key. A menu of different isearch commands will be offered as shown below:
@@ -6,7 +6,7 @@ This package contains a [[https://github.com/magit/transient][Transient]] menu f
 [[file:docs/images/casual-isearch-tmenu.png]]
 
 * Install
-Use the following lines to install cc-isearch-menu.
+Use the following lines to install casual-isearch-tmenu.
 #+begin_src elisp :lexical yes
   (require 'casual-isearch)
   (define-key isearch-mode-map (kbd "<f2>") #'casual-isearch-tmenu)
@@ -52,11 +52,18 @@ Note that editing the search text via ~isearch-edit-string~ will enter a recursi
 As built-in behavior to Transient menus, ~C-q~ will dismiss all nested menus. Alternately one can use ~C-g~ to dismiss the present menu as this package only has one menu.
 
 * See Also
-If you like Casual I-Search, these other projects might interest you:
-- [[https://github.com/kickingvegas/casual][Casual Calc]] - a Transient porcelain for Emacs Calc.
-- [[https://github.com/kickingvegas/casual-dired][Casual Dired]] - a Transient porcelain for the Emacs file manager Dired.
-- [[https://github.com/kickingvegas/casual-avy][Casual Avy]] - a Transient porcelain for Avy.
-- [[https://github.com/kickingvegas/casual-info][Casual Info]] - a Transient porcelain for Info.
+Casual I-Search is part of a suite of porcelains for different Emacs packages.
+
+To get all current and future Casual porcelains, please install [[https://github.com/kickingvegas/casual-suite][Casual Suite]] from [[https://melpa.org/#/casual-suite][MELPA]].
+
+Porcelains currently supported by Casual are listed below:
+
+- [[https://github.com/kickingvegas/casual-avy][Casual Avy]] - a Transient porcelain for [[https://github.com/abo-abo/avy][Avy]].
+- [[https://github.com/kickingvegas/casual-calc][Casual Calc]] - a Transient porcelain for [[https://www.gnu.org/software/emacs/manual/html_mono/calc.html][Calc]].
+- [[https://github.com/kickingvegas/casual-dired][Casual Dired]] - a Transient porcelain for [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html][Dired]].
+- [[https://github.com/kickingvegas/casual-info][Casual Info]] - a Transient porcelain for the [[https://www.gnu.org/software/emacs/manual/html_node/info/][Info]] reader.  
+
+Users who prefer finer grained control over package installation can install each porcelain above individually.
 
 * Sponsorship
 If you enjoy using Casual I-Search, consider making a modest financial contribution to help support its development and maintenance.

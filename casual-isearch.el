@@ -6,7 +6,7 @@
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
 ;; Version: 1.7.0
-;; Package-Requires: ((emacs "29.1") (casual-lib "1.0.0"))
+;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 ;;
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -146,7 +146,7 @@
      isearch-repeat-backward
      :transient t)]]
 
-  [(casual-lib-quit-all)])
+  [(casual-lib-quit-one)])
 
 (provide 'casual-isearch)
 ;;; casual-isearch.el ends here

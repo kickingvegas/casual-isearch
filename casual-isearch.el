@@ -7,7 +7,6 @@
 ;; Keywords: wp
 ;; Version: 1.8.0
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
-;;
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -37,7 +36,7 @@
 ;; `casual-isearch-tmenu'.  Tune the keybinding to your taste.
 
 ;; (require 'casual-isearch)
-;; (define-key isearch-mode-map (kbd "<f2>") #'casual-isearch-tmenu)
+;; (keymap-set isearch-mode-map "<f2>" #'casual-isearch-tmenu)
 
 ;;; Code:
 

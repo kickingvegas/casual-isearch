@@ -13,6 +13,13 @@ Use the following lines to install casual-isearch-tmenu.
   (keymap-set isearch-mode-map "<f2>" #'casual-isearch-tmenu)
 #+end_src
 
+Alternately install with ~use-package~ using the following initialization:
+#+begin_src elisp :lexical no
+  (use-package casual-isearch
+    :ensure t
+    :bind (:map isearch-mode-map ("C-o" . casual-isearch-tmenu)))
+#+end_src
+
 The keybinding to ~casual-isearch-tmenu~ can be changed to user preference.
 
 * Menu Commands

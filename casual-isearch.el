@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
-;; Version: 1.8.1
+;; Version: 1.8.2
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -36,7 +36,12 @@
 ;; `casual-isearch-tmenu'.  Tune the keybinding to your taste.
 
 ;; (require 'casual-isearch)
-;; (keymap-set isearch-mode-map "<f2>" #'casual-isearch-tmenu)
+;; (keymap-set isearch-mode-map "C-o" #'casual-isearch-tmenu)
+
+;; Alternately with `use-package':
+;; (use-package casual-isearch
+;;   :ensure t
+;;   :bind (:map isearch-mode-map ("C-o" . casual-isearch-tmenu)))
 
 ;;; Code:
 

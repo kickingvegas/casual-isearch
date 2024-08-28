@@ -53,6 +53,8 @@
 
 (require 'transient)
 (require 'casual-lib)
+(require 'casual-isearch-utils)
+(require 'casual-isearch-settings)
 
 (defun casual-isearch--toggle-regex-and-edit ()
   "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."
@@ -149,14 +151,19 @@
      :transient nil)]
 
    ["Navigation"
-    ("n" "Next"
-     isearch-repeat-forward
-     :transient t)
     ("p" "Previous"
      isearch-repeat-backward
+     :description (lambda () (casual-isearch-unicode-get :previous))
+     :transient t)
+    ("n" "Next"
+     isearch-repeat-forward
+     :description (lambda () (casual-isearch-unicode-get :next))
      :transient t)]]
 
-  [(casual-lib-quit-one)])
+  [:class transient-row
+   (casual-lib-quit-one)
+   ("," "Settings›" casual-isearch-settings-tmenu)
+   (casual-lib-quit-all)])
 
 (provide 'casual-isearch)
 ;;; casual-isearch.el ends here

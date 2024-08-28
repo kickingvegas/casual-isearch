@@ -42,9 +42,9 @@
 # To setup for new sprint development:
 #   $ make new-sprint
 
-LISP_DIR=.
+LISP_DIR=./lisp
 MAIN_EL=$(LISP_DIR)/casual-isearch.el
-#VERSION_EL=$(LISP_DIR)/casual-info-version.el
+VERSION_EL=$(LISP_DIR)/casual-info-version.el
 
 TIMESTAMP := $(shell /bin/date "+%Y%m%d_%H%M%S")
 VERSION := $(shell ./scripts/read-version.sh $(MAIN_EL))
@@ -70,13 +70,12 @@ status
 
 ## Run test regression
 tests:
-	echo "hi, no tests for casual-isearch yet."
-#	$(MAKE) -C lisp tests
+	$(MAKE) -C lisp tests
 
 ## Bump Patch Version
 bump-casual:
 	sed -i 's/;; Version: $(VERSION)/;; Version: $(VERSION_BUMP)/' $(MAIN_EL)
-#	sed -i 's/(defconst casual-isearch-version "$(VERSION)"/(defconst casual-isearch-version "$(VERSION_BUMP)"/' $(VERSION_EL)
+	sed -i 's/(defconst casual-isearch-version "$(VERSION)"/(defconst casual-isearch-version "$(VERSION_BUMP)"/' $(VERSION_EL)
 
 bump: checkout-development bump-casual
 	git commit -m 'Bump version to $(VERSION_BUMP)' $(MAIN_EL) $(VERSION_EL)

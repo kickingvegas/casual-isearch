@@ -50,8 +50,6 @@
 ;; README.
 
 ;;; Code:
-
-(require 'transient)
 (require 'casual-lib)
 (require 'casual-isearch-utils)
 (require 'casual-isearch-settings)
@@ -77,86 +75,50 @@
 (transient-define-prefix casual-isearch-tmenu ()
   "Transient menu for I-Search."
   [["Edit Search String"
-    ("e"
-     "Edit the search string (recursive)"
-     isearch-edit-string
+    ("e" "Edit the search string (recursive)" isearch-edit-string
      :transient t)
-    ("w"
-     "Pull next word or character from buffer"
-     isearch-yank-word-or-char
+    ("w" "Pull next word or character from buffer" isearch-yank-word-or-char
      :transient t)
-    ("s"
-     "Pull next symbol or character from buffer"
-     isearch-yank-symbol-or-char
+    ("s" "Pull next symbol or character from buffer" isearch-yank-symbol-or-char
      :transient t)
-    ("l"
-     "Pull rest of line from buffer"
-     isearch-yank-line
-     :transient t)
-    ("y"
-     "Pull string from kill ring"
-     isearch-yank-kill
-     :transient t)
-    ("t"
-     "Pull thing from buffer"
-     isearch-forward-thing-at-point
-     :transient nil)]
+    ("l" "Pull rest of line from buffer" isearch-yank-line :transient t)
+    ("y" "Pull string from kill ring" isearch-yank-kill :transient t)
+    ("t" "Pull thing from buffer" isearch-forward-thing-at-point)]
 
    ["Replace"
-    ("r"
-     "Start ‘query-replace’"
-     isearch-query-replace
-     :if-nil buffer-read-only
-     :transient nil)
-    ("x"
-     "Start ‘query-replace-regexp’"
-     isearch-query-replace-regexp
-     :if-nil buffer-read-only
-     :transient nil)]]
+    ("r" "Start ‘query-replace’" isearch-query-replace
+     :if-nil buffer-read-only)
+    ("x" "Start ‘query-replace-regexp’" isearch-query-replace-regexp
+     :if-nil buffer-read-only)]]
 
   [["Toggle"
-    ("X"
-     "Regexp searching (edit)"
+    ("X" "Regexp searching (edit)"
      casual-isearch--toggle-regex-and-edit
      :transient t)
-    ("S"
-     "Symbol searching (edit)"
+    ("S" "Symbol searching (edit)"
      casual-isearch--toggle-symbol-and-edit
      :transient t)
-    ("W"
-     "Word searching (edit)"
+    ("W" "Word searching (edit)"
      casual-isearch--toggle-word-and-edit
      :transient t)
-    ("F"
-     "Case fold"
+    ("F" "Case fold"
      isearch-toggle-case-fold
      :transient t)
-    ("L"
-     "Lax whitespace"
+    ("L" "Lax whitespace"
      isearch-toggle-lax-whitespace
      :transient t)]
 
    ["Misc"
-    ("o"
-     "occur"
-     isearch-occur
-     :transient nil)
-    ("h"
-     "highlight"
-     isearch-highlight-regexp
-     :transient nil)
-    ("H"
-     "highlight lines"
-     isearch-highlight-lines-matching-regexp
-     :transient nil)]
+    ("o" "Occur" isearch-occur)
+    ("h" "Highlight" isearch-highlight-regexp)
+    ("H" "Highlight lines" isearch-highlight-lines-matching-regexp)
+    ("u" "Unhighlight" unhighlight-regexp)]
 
    ["Navigation"
-    ("p" "Previous"
-     isearch-repeat-backward
+    ("p" "Previous" isearch-repeat-backward
      :description (lambda () (casual-isearch-unicode-get :previous))
      :transient t)
-    ("n" "Next"
-     isearch-repeat-forward
+    ("n" "Next" isearch-repeat-forward
      :description (lambda () (casual-isearch-unicode-get :next))
      :transient t)]]
 

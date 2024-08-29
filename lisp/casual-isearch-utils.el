@@ -23,7 +23,6 @@
 
 ;;; Code:
 (require 'simple)
-(require 'transient)
 (require 'isearch)
 (require 'casual-lib)
 

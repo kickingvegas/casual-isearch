@@ -124,6 +124,7 @@
 
   [:class transient-row
    (casual-lib-quit-one)
+   ("RET" "Exit Search" isearch-exit)
    ("," "Settings›" casual-isearch-settings-tmenu)
    (casual-lib-quit-all)])
 

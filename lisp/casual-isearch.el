@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
-;; Version: 1.9.0
+;; Version: 1.10.0
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -124,6 +124,7 @@
 
   [:class transient-row
    (casual-lib-quit-one)
+   ("RET" "Exit Search" isearch-exit)
    ("," "Settings›" casual-isearch-settings-tmenu)
    (casual-lib-quit-all)])
 

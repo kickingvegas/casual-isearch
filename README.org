@@ -56,17 +56,19 @@ The following I-Search commands are grouped as follows in the Transient menu ~ca
 - ~isearch-occur~ (~o~)
 - ~isearch-highlight-regexp~ (~h~)
 - ~isearch-highlight-lines-matching-regexp~ (~H~)
+- ~unhighlight-regexp~ (~u~)
 ** Navigation
 - ~isearch-repeat-forward~ (~n~)
 - ~isearch-repeat-backward~ (~p~)
 
-**  Dismiss
-The Transient key ~C-q~ will dismiss the menu.
+** Exit
+To exit search, press the ~RET~ key. This will leave the point at the last successful search item.
+
 
 * Usage
 When in search mode (typically via the keybinding ~C-s~ or ~C-r~), pressing the keybinding ~C-o~ (or binding of your preference) will raise the Transient menu ~casual-isearch-tmenu~. Once raised, only the /I-Search/ commands in the *Replace* and *Misc* sections will automatically dismiss the menu when selected. All other /I-Search/ commands will /not/ dismiss the menu.
 
-Note that editing the search text via ~isearch-edit-string~ will enter a recursive editing mode that is normally exited when pressing the return key.
+Note that editing the search text via ~isearch-edit-string~ will enter a recursive editing mode that is normally exited when pressing the return (~RET~) key.
 
 Use ~C-g~ to dismiss this Transient menu.
 

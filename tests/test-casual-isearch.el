@@ -69,7 +69,8 @@
                (:binding "h" :command isearch-highlight-regexp)
                (:binding "H" :command isearch-highlight-lines-matching-regexp)
                (:binding "n" :command isearch-repeat-forward)
-               (:binding "p" :command isearch-repeat-backward))))
+               (:binding "p" :command isearch-repeat-backward)
+               (:binding "RET" :command isearch-exit))))
 
         (casualt-suffix-testcase-runner test-vectors
                                         #'casual-isearch-tmenu

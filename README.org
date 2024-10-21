@@ -1,4 +1,10 @@
-[[https://melpa.org/#/casual-isearch][file:https://melpa.org/packages/casual-isearch-badge.svg]]
+* NOTICE
+
+This package has been superseded by the package [[https://github.com/kickingvegas/casual][casual]]. Please install the package ~casual~ from either [[https://melpa.org/#/casual][MELPA]] or [[https://stable.melpa.org/#/casual][MELPA stable]].
+
+Upon installation and upgrade of ~casual~, this package will be uninstalled from your Emacs configuration. Please revisit your configuration of Casual I-Search in your initialization file(s) accordingly.
+
+This repository should be treated as an archive. All future development on Casual I-Search will be done in the [[https://github.com/kickingvegas/casual][Casual repository]].
 
 * Casual I-Search - A Transient menu for I-Search
 

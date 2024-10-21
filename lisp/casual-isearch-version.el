@@ -22,7 +22,7 @@
 
 ;;; Code:
 
-(defconst casual-isearch-version "1.10.1"
+(defconst casual-isearch-version "1.10.2-rc.1"
   "Casual I-Search Version.")
 
 (defun casual-isearch-version ()

@@ -5,7 +5,7 @@
 ;; Author: Charles Choi <kickingvegas@gmail.com>
 ;; URL: https://github.com/kickingvegas/casual-isearch
 ;; Keywords: wp
-;; Version: 1.10.1
+;; Version: 1.10.2-rc.1
 ;; Package-Requires: ((emacs "29.1") (casual-lib "1.1.0"))
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -22,6 +22,12 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; NOTICE
+;; This package `casual-isearch' has been superseded by the package `casual'.
+;; Please update to the `casual' package from either MELPA or MELPA stable. Upon
+;; installation and upgrade of the `casual' package, this package will be
+;; removed.
 
 ;; Provides a Transient menu interface to a subset of isearch functions.
 ;; Said functions are grouped as follows in the following sections:
@@ -53,6 +59,13 @@
 (require 'casual-lib)
 (require 'casual-isearch-utils)
 (require 'casual-isearch-settings)
+
+(display-warning
+ :warning
+ (concat
+  "NOTICE: "
+  "The package casual-isearch has been superseded by the package casual. "
+  "Please upgrade to casual at your earliest convenience."))
 
 (defun casual-isearch--toggle-regex-and-edit ()
   "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."

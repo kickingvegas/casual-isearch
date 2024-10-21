@@ -23,6 +23,12 @@
 
 ;;; Commentary:
 
+;; NOTICE
+;; This package `casual-isearch' has been superseded by the package `casual'.
+;; Please update to the `casual' package from either MELPA or MELPA stable. Upon
+;; installation and upgrade of the `casual' package, this package will be
+;; removed.
+
 ;; Provides a Transient menu interface to a subset of isearch functions.
 ;; Said functions are grouped as follows in the following sections:
 ;; - Edit Search String
@@ -53,6 +59,13 @@
 (require 'casual-lib)
 (require 'casual-isearch-utils)
 (require 'casual-isearch-settings)
+
+(display-warning
+ :warning
+ (concat
+  "NOTICE: "
+  "The package casual-isearch has been superseded by the package casual. "
+  "Please upgrade to casual at your earliest convenience."))
 
 (defun casual-isearch--toggle-regex-and-edit ()
   "Invoke `isearch-toggle-regexp' then `isearch-edit-string'."
